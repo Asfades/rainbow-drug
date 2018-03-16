@@ -3,40 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    content {
+      height: 100%;
+      position: relative;
+    }
+    
+    .welcome-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(230, 230, 230, 1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .welcome-screen__info-button-wrapper {
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: inset 0 0 14px 5px rgba(230, 230, 230, 1);
+    }
+
+    .welcome-screen__info-button {
+      border-radius: 30px;
+      border: none;
+      background-color: transparent;
+      transition: background-color 500ms ease, color 300ms ease, box-shadow 500ms ease;
+      cursor: pointer;
+      color: #537895;
+      font-size: 28px;
+      height: 80px;
+      width: 370px;
+      padding: 0;
+    }
+
+    .welcome-screen__info-button:hover {
+      background-color: black;
+      /* box-shadow: inset 0 0 14px 5px rgba(230, 230, 230, 1); */
+      color: white;
+    }
+
+    .drawing-canvas {
+      cursor: pointer;
+    }
+  </style>
+  
 </head>
 <body>
-<canvas id="draw" width="800" height="800"></canvas>
+<div class="content">
+  <div class="welcome-screen">
+    <div class="welcome-screen__info-button-wrapper">
+      <button class="welcome-screen__info-button">Click and hold to draw</button>
+    </div>
+  </div>
+  <canvas id="draw" class="drawing-canvas" width="800" height="800"></canvas>
+</div>
 <script src="js/mainScript.js"></script>
-
-<style>
-  html, body {
-    margin: 0;
-  }
-</style>
 
 </body>
 </html>
-
-<!-- <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>gerry</title>
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.min.css">
-</head>
-
-<body>
-
-  <div class="container">
-    <canvas id="scene" width="1000px" height="600px">
-
-    </canvas>
-  </div>
-
-  <script src="js/mainScript.js"></script>
-</body>
-
-</html> -->
