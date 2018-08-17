@@ -6,16 +6,14 @@ window.addEventListener('DOMContentLoaded', function () {
 initWelcomeScreen = () => {
   const welcomeScreen = document.getElementsByClassName('welcome-screen')[0]
   const startButton = document.getElementsByClassName('welcome-screen__info-button')[0]
-  
-  startButton.addEventListener('click', function (e) {
-    welcomeScreen.style.display = 'none'
-  })
+
+  welcomeScreen.addEventListener('click', undisplayElementCickHandler(welcomeScreen))
 }
 
 function initDrawer () {
   const canvas = document.getElementById('draw')
   const context = canvas.getContext('2d')
-  const sequenceLength = 200;
+  const sequenceLength = 500;
 
   let isDrawing = false
   let lastX = 0
@@ -68,5 +66,15 @@ function initDrawer () {
 
   function clearScene () {
     context.clearRect(0, 0, canvas.width, canvas.height)
+  }
+}
+
+function undisplayElement (elementToHide) {
+  return elementToHide.style.display = 'none'
+}
+
+function undisplayElementCickHandler (elementToHide) {
+  return function () {
+    undisplayElement(elementToHide)
   }
 }
